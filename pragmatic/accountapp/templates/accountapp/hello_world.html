@@ -12,21 +12,25 @@
 
 
 <div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem; font-size: 2rem ">
-    <h1>
-        Testing
+    <h1 style="font-family: 'Bebas Neue', cursive ">
+        Hello World LIST!
     </h1>
 
     <form action="/account/hello_world/" method="post">
         {% csrf_token %} <!--장고에서 POST를 쓸때는 이걸 써줘야 기능을 작동함!-->
-        <input type="submit" class="btn btn-primary" value="POST">
+        <div>
+            <input type="text" name="hello_world_input">
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="POST">
+        </div>
     </form>
 
-
+    {% if hello_world_output %}
     <h1>
-        {{ text }}
-
+        {{ hello_world_output.text }}
     </h1>
-
+    {% endif %}
 
 </div >
 
