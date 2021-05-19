@@ -7,7 +7,7 @@
         <!-- mb-4는 margin bottom 4이므로 bottom과의 margin을 기존의 4배로 올린다는 것-->
         <h4>QUIT</h4>
     </div>
-    <form action="{% url 'accountapp:delete' pk=user.pk %}" method="post">
+    <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
         <!--accountapp내부에 create로 연결해라 -->
         <!-- 앞으로 코딩할때도 accountapp:create처럼 어느 app에서 create로 가라 이런식으로 할거임. '/' 안쓴다!-->
         {% csrf_token %} <!-- 장고의 기본 보안 기능, post기능쓰려 이거를 넣어야만 기능이 동작한다! -->
