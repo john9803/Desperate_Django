@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import path
-from accountapp.views import hello_world, AccountCreateView, AccountDetailView
+from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView
 
 # 경로지정
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path('create/', AccountCreateView.as_view(), name='create'), # class based view 일때 작성법!!
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
     # detail 뒤에 int:pks는 몇번쨰 사용자의 정보를 가져올 것인지를 나타내는 것임
+    path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
 
 
 ]
