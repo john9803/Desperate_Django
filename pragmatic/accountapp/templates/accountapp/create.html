@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
-    <div style="text-align: center">
+
+    <div style="text-align : center; max-width:   500px; margin: 4rem auto">
+        <div class="mb-4">
+            <!-- mb-4는 margin bottom 4이므로 bottom과의 margin을 기존의 4배로 올린다는 것-->
+            <h4>-SIGN UP-</h4>
+        </div>
         <form action="{% url 'accountapp:create' %}" method="post">
             <!--accountapp내부에 create로 연결해라 -->
             <!-- 앞으로 코딩할때도 accountapp:create처럼 어느 app에서 create로 가라 이런식으로 할거임. '/' 안쓴다!-->
             {% csrf_token %} <!-- 장고의 기본 보안 기능, post기능쓰려 이거를 넣어야만 기능이 동작한다! -->
-            {{ form }} <!-- 우리가 원하는 로그인할 떄의 기능들을 그냥 이거 하나로 다 해준다.-->
-            <input type="submit" class="btn btn-primary">
+            {% bootstrap_form form %} <!-- 우리가 원하는 로그인할 떄의 기능들을 그냥 이거 하나로 다 해준다.-->
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
         </form>
     </div>
 {% endblock %}

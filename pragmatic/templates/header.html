@@ -13,9 +13,15 @@
                 <span>login</span>
             </a>
             {% else %}
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                <span>MyPage</span>
+            </a>
             <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
                 <span>logout</span>
             </a>
+
+            <!-- 이거 <a>태그 써놓은 순서도 중요함!!-->
+
             {% endif %}
         </div>
-    </div >
+    </div>

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accountapp.models import HelloWorld
 
@@ -33,3 +33,7 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
     # 회원가입을 할때 어떤 html 파일을 보여줄 것인지를 지정해야함.
 
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user' # 개인페이지의 유저를 바꿔주기위한 코드
+    template_name = 'accountapp/detail.html'
