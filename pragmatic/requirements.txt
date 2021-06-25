@@ -1,0 +1,11 @@
+asgiref==3.3.4
+beautifulsoup4==4.9.3
+callback==0.0.1
+Django==3.2.3
+django-bootstrap4==3.0.1
+django-environ==0.4.5
+environ==1.0
+Pillow==8.2.0
+pytz==2020.1
+soupsieve==2.2.1
+sqlparse==0.3.1

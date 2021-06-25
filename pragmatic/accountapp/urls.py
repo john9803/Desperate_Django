@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import path
-from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
+from .views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
 
 # 경로지정
 
